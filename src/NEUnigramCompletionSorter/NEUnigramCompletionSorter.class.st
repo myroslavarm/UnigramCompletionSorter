@@ -34,7 +34,7 @@ NEUnigramCompletionSorter >> readFrequancyTableFromFile [
 ]
 
 { #category : #sorting }
-NEUnigramCompletionSorter >> sort: anOrderedCollection [
+NEUnigramCompletionSorter >> sortCompletionList: anOrderedCollection [
 	^ anOrderedCollection sort: [ :a :b |
 		(frequencyTable at: a contents ifAbsent: 0) > (frequencyTable at: b contents ifAbsent: 0) ]
 ]

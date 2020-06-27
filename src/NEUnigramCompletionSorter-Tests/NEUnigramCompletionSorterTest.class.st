@@ -27,7 +27,7 @@ NEUnigramCompletionSorterTest >> testSort [
 	
 	candidates := #(apple banana avocado orange).
 	expected := #(orange avocado apple banana).
-	actual := sorter sort: candidates.
+	actual := sorter sortCompletionList: candidates.
 	
 	self assert: actual equals: expected
 ]
@@ -38,7 +38,7 @@ NEUnigramCompletionSorterTest >> testSortCandidatesNotInDictionary [
 	
 	candidates := #(apple dragonfruit banana avocado).
 	expected := #(avocado apple banana dragonfruit).
-	actual := sorter sort: candidates.
+	actual := sorter sortCompletionList: candidates.
 	
 	self assert: actual equals: expected
 ]
@@ -49,7 +49,7 @@ NEUnigramCompletionSorterTest >> testSortEmptyCandidates [
 	
 	candidates := #().
 	expected := #().
-	actual := sorter sort: candidates.
+	actual := sorter sortCompletionList: candidates.
 	
 	self assert: actual equals: expected
 ]
@@ -61,7 +61,7 @@ NEUnigramCompletionSorterTest >> testSortEmptyFrequencies [
 	
 	candidates := #().
 	expected := #().
-	actual := sorter sort: candidates.
+	actual := sorter sortCompletionList: candidates.
 	
 	self assert: actual equals: expected
 ]

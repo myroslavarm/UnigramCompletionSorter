@@ -11,5 +11,5 @@ BaselineOfUnigramCompletionSorter >> baselineOf: spec [
 	spec for: #common do: [ 
 		spec
 			package: 'NEUnigramCompletionSorter';
-			package: 'NEUnigramCompletionSorter-Tests' with: [ spec requires: #(NECompletionSorter) ] ]
+			package: 'NEUnigramCompletionSorter-Tests' with: [ spec requires: #(NEUnigramCompletionSorter) ] ]
 ]
