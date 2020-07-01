@@ -30,7 +30,11 @@ NEUnigramCompletionSorter >> initialize [
 
 { #category : #'data loading' }
 NEUnigramCompletionSorter >> readFrequancyTableFromFile [
-	frequencyTable := STONJSON fromString: self frequencyTableJsonFile contents.
+	| frequencies dict |
+	frequencies := STONJSON fromString: self frequencyTableJsonFile contents.
+	dict := Dictionary new.
+	frequencies do: [ :each | dict at: each first put: each second ].
+	frequencyTable := dict
 ]
 
 { #category : #sorting }
